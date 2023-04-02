@@ -1,0 +1,26 @@
+<div class="layout-topbar">
+    <a class="layout-topbar-logo" routerLink="">
+        <img src="assets/layout/images/msb_logo.png" alt="logo">
+        <span>MSB Kurumsal Uygulamalar</span>
+    </a>
+
+    <button #menubutton class="p-link layout-menu-button layout-topbar-button" id="toggleButtonId" (click)="layoutService.onMenuToggle()">
+        <i class="pi pi-bars"></i>
+    </button>
+
+    <button #topbarmenubutton class="p-link layout-topbar-menu-button layout-topbar-button" (click)="layoutService.showProfileSidebar()">
+        <i class="pi pi-ellipsis-v"></i>
+    </button>
+
+    <div #topbarmenu class="layout-topbar-menu" [ngClass]="{'layout-topbar-menu-mobile-active': layoutService.state.profileSidebarVisible}">
+       
+        <button class="p-link layout-topbar-button"  title="Profil Sayfası">
+            <i class="pi pi-user"></i>
+            <span>Profil</span>
+        </button>
+        <button class="p-link layout-topbar-button" title="Çıkış Yap" [routerLink]="'/login'">
+            <i class="pi pi-sign-out"></i>
+            <span>Çıkış</span>
+        </button>
+    </div>
+</div>
